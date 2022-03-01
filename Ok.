@@ -91,10 +91,10 @@ local GetService = setmetatable({}, {
     end
 })
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/purple/main/tt5"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/test/main/xd1"))()
 local NotifyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/lib/main/notifyfarzad"))()
 local Notify = NotifyLibrary.Notify
-Library.theme.accentcolor = Color3.new(0.8524, 0, 0.1242)
+Library.theme.accentcolor = Color3.new(0.92, 0.92, 0.96)
 
 local RunService = GetService.RunService
 local Players = GetService.Players
@@ -121,7 +121,7 @@ local PuppywareSettings = {
             AimAssist = false,
             IsAiming = false,
             ShowFOV = false,
-            FOVColor = Color3.new(0.8524, 0, 0.1242),
+            FOVColor = Color3.new(0.92, 0.92, 0.96),
             UseNearestDistance = false,
             WallCheck = false,
             KnockedOutCheck = false,
@@ -383,6 +383,49 @@ local PuppywareModule = {
 local Window = Library:CreateWindow("FarzadSexyWare.cc", Vector2.new(492, 598), Enum.KeyCode.RightShift)
 local AimingTab = Window:CreateTab("Main")
 
+-- Aimbot Setion --
+
+local LegitSection = AimingTab:CreateSector("Aimbot", "left")
+local aimbottoggle = LegitSection:AddToggle('Enabled', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.Enabled = Boolean
+end)
+aimbottoggle:AddKeybind()
+
+local AimAssistToggle = LegitSection:AddToggle('Aim Assist', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.AimAssist = Boolean
+end)
+
+AimAssistToggle:AddKeybind()
+
+local AimbotFOVToggle = LegitSection:AddToggle('Show FOV', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.ShowFOV = Boolean
+end)
+
+AimbotFOVToggle:AddColorpicker(PuppywareSettings.Aiming.Aimbot.FOVColor, function(Color)
+    PuppywareSettings.Aiming.Aimbot.FOVColor = Color
+end)
+
+LegitSection:AddToggle('Use Nearest Distance', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.UseNearestDistance = Boolean
+end)
+
+LegitSection:AddToggle('Wall Check', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.WallCheck = Boolean
+end)
+
+LegitSection:AddToggle('Knock Out Check', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.KnockedOutCheck = Boolean
+end)
+
+LegitSection:AddToggle('Grabbed Check', false, function(Boolean)
+    PuppywareSettings.Aiming.Aimbot.GrabbedCheck = Boolean
+end)
+
+LegitSection:AddDropdown('Hitboxes', {"Head", "HumanoidRootPart"}, {"Head"}, true, function(Value)
+    PuppywareSettings.Aiming.Aimbot.Hitboxes = Value
+end)
+
+
 -- Silent Aim Setion --
 
 local RageSection = AimingTab:CreateSector("Silent", "left")
@@ -396,7 +439,7 @@ local SilentAimFOVToggle = RageSection:AddToggle('Show FOV', false, function(Boo
     PuppywareSettings.Aiming.SilentAim.ShowFOV = Boolean
 end)
 
-SilentAimFOVToggle:AddColorpicker(Color3.new(0.6524, 0, 0.1242), function(Color)
+SilentAimFOVToggle:AddColorpicker(Color3.new(0.92, 0.92, 0.96), function(Color)
     PuppywareSettings.Aiming.SilentAim.FOVColor = Color
 end)
 
@@ -433,7 +476,7 @@ local SilentAimFOVToggle = RageSection:AddToggle('Show FOV', false, function(Boo
     PuppywareSettings.Aiming.TargetAim.ShowFOV = Boolean
 end)
 
-SilentAimFOVToggle:AddColorpicker(Color3.new(0.6524, 0, 0.1242), function(Color)
+SilentAimFOVToggle:AddColorpicker(Color3.new(0.92, 0.92, 0.96), function(Color)
     PuppywareSettings.Aiming.TargetAim.FOVColor = Color
 end)
 
@@ -455,17 +498,17 @@ end)
 
 -- Aiming Settings Section --
 
-local farzadowoxd1 = AimingTab:CreateSector("🟥 lock Rejoin to Fix", "right")
+local farzadowoxd1 = AimingTab:CreateSector("⬜ lock Rejoin to Fix", "right")
 
 farzadowoxd1:AddButton("Enable", function(value)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/purple/main/redredcube"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/test/main/xduwu3"))()
 end)
 
-local farzadowoxd1 = AimingTab:CreateSector("🔴 lock", "right")
+local farzadowoxd1 = AimingTab:CreateSector("⚪ lock", "right")
 
 farzadowoxd1:AddButton("Enable (B)", function(value)
 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/purple/main/super%20red"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/test/main/xduwu2"))()
 end)
 
 local xdowo123 = farzadowoxd1:AddButton('Break', function(value)
@@ -692,6 +735,30 @@ local xdowo123 = farzadowoxd1:AddButton('Break', function(value)
     end
 end)
 
+-- Aimbot Settings Section --
+
+local AimbotSettings1 = AimingTab:CreateSector("Aimbot Settings", "right")
+
+AimbotSettings1:AddDropdown('Aim Assist Type', {"Camera", "Mouse"}, "Camera", false, function(Option)
+    PuppywareSettings.Aiming.AimbotSettings.AimAssistType = Option
+end)
+
+local MovementPredToggle = AimbotSettings1:AddToggle('Movement Prediction', false, function(Boolean)
+    PuppywareSettings.Aiming.AimbotSettings.MovementPrediction = Boolean
+end)
+
+MovementPredToggle:AddSlider(1, 1, 5, 1, function(Value)
+    PuppywareSettings.Aiming.AimbotSettings.MovementPredictionAmount = 0.165 * tonumber("1." ..Value)
+end)
+
+local SmoothingTracing = AimbotSettings1:AddToggle('Smoothing Tracing', false, function(Boolean)
+    PuppywareSettings.Aiming.AimbotSettings.SmoothingTracing = Boolean
+end)
+
+SmoothingTracing:AddSlider(2, 5, 10, 1, function(Value)
+    PuppywareSettings.Aiming.AimbotSettings.SmoothingTracingAmount = Value
+end)
+
 local AimingSettings = AimingTab:CreateSector("Settings", "right")
 
 AimingSettings:AddToggle('Ping Based Prediction', false, function(Boolean)
@@ -876,6 +943,202 @@ end)
 
 local CharacterSector = BlatantTab:CreateSector("Character", "right")
 
+CharacterSector:AddButton('fly X', function()
+    local L_152_
+	local L_153_ = game.Players.LocalPlayer
+	IYMouse = L_153_:GetMouse()
+	IYMouse.KeyDown:connect(
+            function(L_154_arg0)
+		if L_154_arg0 == "x" then
+			if L_152_ then
+				L_152_ = false
+				fly()
+			else
+				L_152_ = true
+				NOFLY()
+			end
+		end
+	end
+        )
+	for L_155_forvar0, L_156_forvar1 in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if L_156_forvar1:IsA("BasePart") and L_156_forvar1.CanCollide == true then
+			L_156_forvar1.CanCollide = false
+		end
+	end
+	FLYING = false
+	QEfly = true
+	iyflyspeed = 7
+	vehicleflyspeed = 7
+	function sFLY(L_157_arg0)
+		repeat
+			wait()
+		until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and
+                game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+		repeat
+			wait()
+		until IYMouse
+		local L_158_ = game.Players.LocalPlayer.Character.LowerTorso
+		local L_159_ = {
+			F = 0,
+			B = 0,
+			L = 0,
+			R = 0,
+			Q = 0,
+			E = 0
+		}
+		local L_160_ = {
+			F = 0,
+			B = 0,
+			L = 0,
+			R = 0,
+			Q = 0,
+			E = 0
+		}
+		local L_161_ = 5
+		local function L_162_func()
+			FLYING = true
+			local L_163_ = Instance.new("BodyGyro", L_158_)
+			local L_164_ = Instance.new("BodyVelocity", L_158_)
+			L_163_.P = 9e4
+			L_163_.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+			L_163_.cframe = L_158_.CFrame
+			L_164_.velocity = Vector3.new(0, 0, 0)
+			L_164_.maxForce = Vector3.new(9e9, 9e9, 9e9)
+			spawn(
+                    function()
+				repeat
+					wait()
+					if not L_157_arg0 and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+						game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").PlatformStand =
+                                    true
+					end
+					if L_159_.L + L_159_.R ~= 0 or L_159_.F + L_159_.B ~= 0 or L_159_.Q + L_159_.E ~= 0 then
+						L_161_ = 50
+					elseif not (L_159_.L + L_159_.R ~= 0 or L_159_.F + L_159_.B ~= 0 or L_159_.Q + L_159_.E ~= 0) and L_161_ ~= 0 then
+						L_161_ = 0
+					end
+					if L_159_.L + L_159_.R ~= 0 or L_159_.F + L_159_.B ~= 0 or L_159_.Q + L_159_.E ~= 0 then
+						L_164_.velocity =
+                                    (workspace.CurrentCamera.CoordinateFrame.lookVector * (L_159_.F + L_159_.B) +
+                                    workspace.CurrentCamera.CoordinateFrame *
+                                        CFrame.new(L_159_.L + L_159_.R, (L_159_.F + L_159_.B + L_159_.Q + L_159_.E) * 0.2, 0).p -
+                                    workspace.CurrentCamera.CoordinateFrame.p) *
+                                    L_161_
+						L_160_ = {
+							F = L_159_.F,
+							B = L_159_.B,
+							L = L_159_.L,
+							R = L_159_.R
+						}
+					elseif L_159_.L + L_159_.R == 0 and L_159_.F + L_159_.B == 0 and L_159_.Q + L_159_.E == 0 and L_161_ ~= 0 then
+						L_164_.velocity =
+                                    (workspace.CurrentCamera.CoordinateFrame.lookVector * (L_160_.F + L_160_.B) +
+                                    workspace.CurrentCamera.CoordinateFrame *
+                                        CFrame.new(L_160_.L + L_160_.R, (L_160_.F + L_160_.B + L_159_.Q + L_159_.E) * 0.2, 0).p -
+                                    workspace.CurrentCamera.CoordinateFrame.p) *
+                                    L_161_
+					else
+						L_164_.velocity = Vector3.new(0, 0, 0)
+					end
+					L_163_.cframe = workspace.CurrentCamera.CoordinateFrame
+				until not FLYING
+				L_159_ = {
+					F = 0,
+					B = 0,
+					L = 0,
+					R = 0,
+					Q = 0,
+					E = 0
+				}
+				L_160_ = {
+					F = 0,
+					B = 0,
+					L = 0,
+					R = 0,
+					Q = 0,
+					E = 0
+				}
+				L_161_ = 0
+				L_163_:destroy()
+				L_164_:destroy()
+				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+					game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").PlatformStand = false
+				end
+			end
+                )
+		end
+		IYMouse.KeyDown:connect(
+                function(L_165_arg0)
+			if L_165_arg0:lower() == "w" then
+				if L_157_arg0 then
+					L_159_.F = vehicleflyspeed
+				else
+					L_159_.F = iyflyspeed
+				end
+			elseif L_165_arg0:lower() == "s" then
+				if L_157_arg0 then
+					L_159_.B = -vehicleflyspeed
+				else
+					L_159_.B = -iyflyspeed
+				end
+			elseif L_165_arg0:lower() == "a" then
+				if L_157_arg0 then
+					L_159_.L = -vehicleflyspeed
+				else
+					L_159_.L = -iyflyspeed
+				end
+			elseif L_165_arg0:lower() == "d" then
+				if L_157_arg0 then
+					L_159_.R = vehicleflyspeed
+				else
+					L_159_.R = iyflyspeed
+				end
+			elseif QEfly and L_165_arg0:lower() == "e" then
+				if L_157_arg0 then
+					L_159_.Q = vehicleflyspeed * 2
+				else
+					L_159_.Q = iyflyspeed * 2
+				end
+			elseif QEfly and L_165_arg0:lower() == "q" then
+				if L_157_arg0 then
+					L_159_.E = -vehicleflyspeed * 2
+				else
+					L_159_.E = -iyflyspeed * 2
+				end
+			end
+		end
+            )
+		IYMouse.KeyUp:connect(
+                function(L_166_arg0)
+			if L_166_arg0:lower() == "w" then
+				L_159_.F = 0
+			elseif L_166_arg0:lower() == "s" then
+				L_159_.B = 0
+			elseif L_166_arg0:lower() == "a" then
+				L_159_.L = 0
+			elseif L_166_arg0:lower() == "d" then
+				L_159_.R = 0
+			elseif L_166_arg0:lower() == "e" then
+				L_159_.Q = 0
+			elseif L_166_arg0:lower() == "q" then
+				L_159_.E = 0
+			end
+		end
+            )
+		L_162_func()
+	end
+	function NOFLY()
+		FLYING = false
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").PlatformStand = true
+	end
+	function fly()
+		NOFLY()
+		wait()
+		sFLY()
+	end
+
+end)
+
 CharacterSector:AddButton('No Jump Cooldown', function()
 --auto exc support
 if not game.IsLoaded(game) then 
@@ -1005,7 +1268,7 @@ local AutoDropToggle = CashSector:AddToggle("Auto Drop", false, function(State)
 end)
 
 local xddowo = BlatantTab:CreateSector("ESP", "right")
-local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/purplexdxd/main/redesp"))()
+local L_18_ = loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/test/main/xduwu1"))()
 local nigga1 = xddowo:AddToggle(
     "ESP", false, function(L_201_arg0)
 	L_18_:Toggle(L_201_arg0)
